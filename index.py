@@ -8,7 +8,8 @@ engine = pyttsx3.init()
 r = sr.Recognizer()
 
 closeDownCommands = ['no','nope','close down','nevermind']
-searchCommands = ['look up', 'get me the', 'find me the', 'what\'s is the', 'what\'s the','show me the']
+searchCommands = ['look up', 'get me the', 'find me the', 'what is the', 'what\'s the','show me the']
+mathCommands = ['what is', 'what is the ']
 
 def speak(content):
    engine.say(content)
@@ -24,15 +25,19 @@ def listen(phrase):
 
 def runCommand(command):
    try:
-      print(command)
+      # print(command)
       commandQuery(command)
    except:
       print('Error')
 
 def commandQuery(command):
+   print(command)
    if 'who are you' in command:
       speak('I am RED, version 1.0')
       listen('Anything else sir')
+   elif any(word in command for word in mathCommands):
+      speak("Running the numbers")
+      calculate(command)
    elif any(word in command for word in searchCommands):
       speak('One second, let me get that')
       searchOnInternet(command)
@@ -42,6 +47,13 @@ def commandQuery(command):
 def searchOnInternet(command):
    query = command.replace(" ", "+")
    webbrowser.get(chrome_path).open('https://www.google.com/search?q='+query)
+
+def calculate(command):
+   for i in mathCommands:
+      s = command.replace(i, '')
+      print(s)
+
+calculate('What is 3 * 3')
 
 listen('Hello Sir, how can I help you')
 
