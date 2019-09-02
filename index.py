@@ -2,6 +2,10 @@ import speech_recognition as sr
 import pyttsx3
 import os
 import webbrowser
+import wikipedia
+from pyowm import OWM
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
 chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
 engine = pyttsx3.init()
