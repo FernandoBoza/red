@@ -1,12 +1,13 @@
-import re
+import pyttsx3
 
-mathCommands = ['what is', 'get me the', 'find me the']
-command = 'what is the square root of 100 / 3'
+voiceId = [
+"com.apple.speech.synthesis.voice.karen", -
+"com.apple.speech.synthesis.voice.samantha", -
+]
 
-for i in mathCommands:
-   if i in command:
-      s = command.replace(i, '')
-      try:
-         print( s + ' is '+  str(eval(s)))
-      except:
-         print('this')
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+for voice in voiceId:
+   engine.setProperty('voice', voice)
+   engine.say('The quick brown fox jumped over the lazy dog.')
+engine.runAndWait()

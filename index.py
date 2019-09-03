@@ -9,14 +9,18 @@ from bs4 import BeautifulSoup
 import wolframalpha
 import requests
 import ssl
+from nltk import tokenize
+from config import keys
 
 
 ssl._create_default_https_context = ssl._create_unverified_context
 chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
 engine = pyttsx3.init()
+engine.setProperty('voice', "com.apple.speech.synthesis.voice.karen")
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate+50)
 r = sr.Recognizer()
-appId = 'L34A93-X4HEPHURG3'
-client = wolframalpha.Client(appId)
+client = wolframalpha.Client(keys.wolframalpha_api_key)
 
 closeDownCommands = ['no','nope','close down', 'shut down','nevermind']
 searchCommands = ['look up', 'who is', 'find me the', 'what is the', 'what\'s the','show me the']
@@ -34,8 +38,14 @@ def listen(phrase):
    with sr.Microphone() as source:
       audio = r.listen(source)
    print('Proccessing')
-   command = r.recognize_google(audio).lower()
-   runCommand(command)
+   WIT_AI_KEY = keys.wit_api_key
+   try:
+      runCommand(r.recognize_wit(audio, key=WIT_AI_KEY))
+   except sr.UnknownValueError:
+      print("Wit.ai could not understand audio")
+   except sr.RequestError as e:
+      print("Could not request results from Wit.ai service; {0}".format(e))
+
 
 def runCommand(command):
    print(command)
@@ -70,18 +80,18 @@ def search_wiki(command):
       page = wikipedia.page(err.options[0])
    wikiTitle = str(page.title.encode('utf-8'))
    wikiSummary = str(page.summary.encode('utf-8'))
-   if len(wikiSummary) > 500:
-      openChrome(page.url)
-      text = wikiSummary.partition('.')[0] + '.'
-      print(text)
-      speak(text)
-      speak('should i continue?')
-      with sr.Microphone() as source:
-         audio = r.listen(source)
-      print('Proccessing')
-      res = r.recognize_google(audio).lower()
-      print(r.recognize_google(audio).lower())
-      print(res)
+   openChrome(page.url)
+   text = tokenize.sent_tokenize(wikiSummary)
+   print(text[0])
+   speak(text[0])
+   speak('should i continue?')
+   with sr.Microphone() as source:
+      audio = r.listen(source)
+   print('Proccessing')
+   if r.recognize_google(audio).lower() == "yes":
+      for sent in text[1:]:
+         print(sent)
+         speak(sent)
 
       
 
@@ -117,4 +127,5 @@ def resolveListOrDict(variable):
   else:
     return variable['plaintext']
 
-listen('Hello Sir, how can I help you')
+# search_wiki("look up a red black tree")
+listen('How can I help you?')
