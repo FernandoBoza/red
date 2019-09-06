@@ -1,23 +1,27 @@
-import speech_recognition as sr
-import ssl
-from config import keys
-
-ssl._create_default_https_context = ssl._create_unverified_context
-r = sr.Recognizer()
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = './config/My Project-bd8af4dfa881.json'
+from google.cloud import texttospeech
+import base64
 
 
-def listen(phrase):
-    print(phrase)
-    with sr.Microphone() as source:
-        audio = r.listen(source)
-    print('Proccessing')
-    WIT_AI_KEY = keys.wit_api_key
-    try:
-        print(r.recognize_wit(audio, key=WIT_AI_KEY))
-    except sr.UnknownValueError:
-        print("Wit.ai could not understand audio")
-    except sr.RequestError as e:
-        print("Could not request results from Wit.ai service; {0}".format(e))
+def create_google_sst(text):
+    client = texttospeech.TextToSpeechClient()
+    synthesis_input = texttospeech.types.SynthesisInput(text=text)
+    voice = texttospeech.types.VoiceSelectionParams(
+            name="en-US-Wavenet-F",
+            language_code='en-US', 
+            ssml_gender=texttospeech.enums.SsmlVoiceGender.FEMALE
+        )
+    audio_config = texttospeech.types.AudioConfig(
+            audio_encoding=texttospeech.enums.AudioEncoding.MP3,
+            pitch=2.0,
+            speaking_rate=1.26
+        )
+    
+    response = client.synthesize_speech(synthesis_input, voice, audio_config)
+    
+    with open('./static_audio_lib/how_can_help_you.mp3', 'wb') as out:
+        out.write(response.audio_content)
+        print('Audio content written to file')
 
-
-listen("Say something")
+create_google_sst("how can I help you ?")
