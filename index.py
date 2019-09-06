@@ -62,9 +62,9 @@ def command_query(command):
         speak('One second, let me get that')
         search_wiki(command)
     elif any(word in command for word in closeDownCommands):
-        speak('Got it, let me know if you need anything else sir')
+        speak('Got it, let me know if you need anything else')
         return
-    listen('Anything else sir')
+    listen('Anything else')
 
 
 def search_wiki(command):
@@ -76,20 +76,18 @@ def search_wiki(command):
         page = wikipedia.page(search_results[0])
     except wikipedia.DisambiguationError as err:
         page = wikipedia.page(err.options[0])
-    wiki_title = str(page.title.encode('utf-8'))
     wiki_summary = str(page.summary.encode('utf-8'))
     open_chrome(page.url)
     text = tokenize.sent_tokenize(wiki_summary)
-    print(text[0])
     speak(text[0])
     speak('should i continue?')
     with sr.Microphone() as source:
         audio = r.listen(source)
     print('Processing')
-    if r.recognize_google(audio).lower() == "yes":
-        for sent in text[1:]:
-            print(sent)
-            speak(sent)
+    if r.recognize_google(audio).lower() == "yea" or "continue":
+        for sentence in text[1:]:
+            print(sentence)
+            speak(sentence)
 
 
 def calculate(command):
@@ -104,19 +102,15 @@ def calculate(command):
 
 def search_wolfram(command):
     res = client.query(command)
-    if res['@success'] == 'false':
-        print('Question cannot be resolved')
-    else:
-        result = ''
-        pod = res['pod'][2]
-        print(pod)
-        if (('definition' in pod['@title'].lower()) or ('result' in pod['@title'].lower()) or (
-                pod.get('@primary', 'false') == 'true')):
-            result = resolve_list_or_dict(pod['subpod'])
-            convertedFloat = float(result.replace('...', ''))
-            final = str(round(convertedFloat, 2))
-            speak(final)
-
+    output = next(res.results)
+    pod = res['pod'][2]
+    result = resolve_list_or_dict(pod['subpod'])
+    try:
+        convertedFloat = float(result.replace('...', ''))
+        speak(str(round(convertedFloat, 2)))
+    except:
+        speak(result)
+    
 
 def resolve_list_or_dict(variable):
     if isinstance(variable, list):

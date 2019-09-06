@@ -1,0 +1,432 @@
+[
+   {
+      "@success": "true",
+      "@error": "false",
+      "@numpods": "8",
+      "@datatypes": "",
+      "@timedout": "",
+      "@timedoutpods": "",
+      "@timing": "1.934",
+      "@parsetiming": "0.966",
+      "@parsetimedout": "false",
+      "@recalculate": "",
+      "@id": "MSPa158171fbi7hff9dafif0300005eeb33d421f7a67b",
+      "@host": "https: //www4f.wolframalpha.com",
+      "@server": "47",
+      "@related": "https://www4f.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa158181fbi7hff9dafif03000057da9c2ei972aab0682927807421097904",
+      "@version": "2.6",
+      "pod": [
+         {
+            "@title": "Input",
+            "@scanner": "Identity",
+            "@id": "Input",
+            "@position": "100",
+            "@error": "false",
+            "@numsubpods": "1",
+            "subpod": {
+               "@title": "",
+               "img": {
+                  "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158191fbi7hff9dafif0300001hfbf50dhie142b8?MSPStoreType=image/gif&s=47",
+                  "@alt": "sqrt(100/3)",
+                  "@title": "sqrt(100/3)",
+                  "@width": "47",
+                  "@height": "43",
+                  "@type": "Default",
+                  "@themes": "1,2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  1
+0,
+                  1
+1,
+                  1
+2"}, 
+   "plaintext": "sqrt(100/3)"
+               },
+               "expressiontypes": {
+                  "expressiontype": {
+                     "@name": "Default"
+                  }
+               }
+            },
+            {
+               "@title": "Result",
+               "@scanner": "Simplification",
+               "@id": "Result",
+               "@position": "200",
+               "@error": "false",
+               "@numsubpods": "1",
+               "@primary": "true",
+               "subpod": {
+                  "@title": "",
+                  "img": {
+                     "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158201fbi7hff9dafif0300002bghg73e0gda2b91?MSPStoreType=image/gif&s=47",
+                     "@alt": "10/sqrt(3)",
+                     "@title": "10/sqrt(3)",
+                     "@width": "29",
+                     "@height": "40",
+                     "@type": "Default",
+                     "@themes": "1,2,
+                     3,
+                     4,
+                     5,
+                     6,
+                     7,
+                     8,
+                     9,
+                     1
+0,
+                     1
+1,
+                     1
+2"}, 
+   "plaintext": "10/sqrt(3)"
+                  },
+                  "expressiontypes": {
+                     "expressiontype": {
+                        "@name": "Default"
+                     }
+                  }
+               },
+               {
+                  "@title": "Decimal approximation",
+                  "@scanner": "Numeric",
+                  "@id": "DecimalApproximation",
+                  "@position": "300",
+                  "@error": "false",
+                  "@numsubpods": "1",
+                  "@primary": "true",
+                  "subpod": {
+                     "@title": "",
+                     "img": {
+                        "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158211fbi7hff9dafif0300004818i2h7d67bi3ii?MSPStoreType=image/gif&s=47",
+                        "@alt": "5.773502691896257645091487805019574556476017512701268760186...",
+                        "@title": "5.773502691896257645091487805019574556476017512701268760186...",
+                        "@width": "491",
+                        "@height": "22",
+                        "@type": "Default",
+                        "@themes": "1,2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        1
+0,
+                        1
+1,
+                        1
+2"}, 
+   "plaintext": "5.773502691896257645091487805019574556476017512701268760186..."
+                     },
+                     "expressiontypes": {
+                        "expressiontype": {
+                           "@name": "Default"
+                        }
+                     },
+                     "states": {
+                        "@count": "1",
+                        "state": {
+                           "@name": "More digits",
+                           "@input": "DecimalApproximation__More digits"
+                        }
+                     }
+                  },
+                  {
+                     "@title": "Alternate form",
+                     "@scanner": "Simplification",
+                     "@id": "AlternateForm",
+                     "@position": "400",
+                     "@error": "false",
+                     "@numsubpods": "1",
+                     "subpod": {
+                        "@title": "",
+                        "img": {
+                           "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158221fbi7hff9dafif0300001738ae8fi6hced4d?MSPStoreType=image/gif&s=47",
+                           "@alt": "(10 sqrt(3))/3",
+                           "@title": "(10 sqrt(3))/3",
+                           "@width": "48",
+                           "@height": "40",
+                           "@type": "Default",
+                           "@themes": "1,2,
+                           3,
+                           4,
+                           5,
+                           6,
+                           7,
+                           8,
+                           9,
+                           1
+0,
+                           1
+1,
+                           1
+2"}, 
+   "plaintext": "(10 sqrt(3))/3"
+                        },
+                        "expressiontypes": {
+                           "expressiontype": {
+                              "@name": "Default"
+                           }
+                        },
+                        "states": {
+                           "@count": "1",
+                           "state": {
+                              "@name": "Step-by-step solution",
+                              "@input": "AlternateForm__Step-by-step solution",
+                              "@stepbystep": "true"
+                           }
+                        }
+                     },
+                     {
+                        "@title": "Number line",
+                        "@scanner": "NumberLine",
+                        "@id": "NumberLine",
+                        "@position": "500",
+                        "@error": "false",
+                        "@numsubpods": "1",
+                        "subpod": {
+                           "@title": "",
+                           "img": {
+                              "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158231fbi7hff9dafif0300000f4gc1edf3eh5659?MSPStoreType=image/gif&s=47",
+                              "@alt": "",
+                              "@title": "",
+                              "@width": "330",
+                              "@height": "58",
+                              "@type": "1DMathPlot_1",
+                              "@themes": "1,2,
+                              3,
+                              4,
+                              5,
+                              6,
+                              7,
+                              8,
+                              9,
+                              1
+0,
+                              1
+1,
+                              1
+2"}, 
+   "plaintext": None
+                           },
+                           "expressiontypes": {
+                              "expressiontype": {
+                                 "@name": "1DMathPlot"
+                              }
+                           }
+                        },
+                        {
+                           "@title": "Continued fraction",
+                           "@scanner": "ContinuedFraction",
+                           "@id": "ContinuedFraction",
+                           "@position": "600",
+                           "@error": "false",
+                           "@numsubpods": "1",
+                           "subpod": {
+                              "@title": "",
+                              "img": {
+                                 "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158241fbi7hff9dafif03000019id719fc13b5b51?MSPStoreType=image/gif&s=47",
+                                 "@alt": "[5; 1, 
+   3,
+                                 2,
+                                 2,
+                                 2,
+                                 3,
+                                 1,
+                                 10^_
+                              ]", 
+   "@title": "[5; 1, 
+   3,
+                              2,
+                              2,
+                              2,
+                              3,
+                              1,
+                              10^_
+                           ]", 
+   "@width": "548",
+                           "@height": "21",
+                           "@type": "Default",
+                           "@themes": "1,2,
+                           3,
+                           4,
+                           5,
+                           6,
+                           7,
+                           8,
+                           9,
+                           1
+   0,
+                           1
+   1,
+                           1
+   2"}, 
+   "plaintext": "[5; 1, 
+   3,
+                           2,
+                           2,
+                           2,
+                           3,
+                           1,
+                           10^_
+                        ]"}, 
+   "expressiontypes": {
+                           "expressiontype": {
+                              "@name": "Default"
+                           }
+                        },
+                        "states": {
+                           "@count": "1",
+                           "state": {
+                              "@name": "Fraction form",
+                              "@input": "ContinuedFraction__Fraction form"
+                           }
+                        }
+                     },
+                     {
+                        "@title": "All 2nd roots of 100/3",
+                        "@scanner": "RootsOfUnity",
+                        "@id": "AllNthRoots",
+                        "@position": "700",
+                        "@error": "false",
+                        "@numsubpods": "2",
+                        "subpod": [
+                           {
+                              "@title": "",
+                              "img": {
+                                 "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158251fbi7hff9dafif030000347ic66ga478e2ei?MSPStoreType=image/gif&s=47",
+                                 "@alt": "(10 e^0)/sqrt(3) ≈ 5.7735 (real, 
+   principal root)", 
+   "@title": "(10 e^0)/sqrt(3) ≈ 5.7735 (real, 
+   principal root)", 
+   "@width": "213",
+                                 "@height": "43",
+                                 "@type": "Default",
+                                 "@themes": "1,2,
+                                 3,
+                                 4,
+                                 5,
+                                 6,
+                                 7,
+                                 8,
+                                 9,
+                                 1
+   0,
+                                 1
+   1,
+                                 1
+   2"}, 
+   "plaintext": "(10 e^0)/sqrt(3) ≈ 5.7735 (real, 
+   principal root)"}, 
+   {
+                                    "@title": "",
+                                    "img": {
+                                       "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158261fbi7hff9dafif0300001ef8di8d90252aba?MSPStoreType=image/gif&s=47",
+                                       "@alt": "(10 e^(i π))/sqrt(3) ≈ -5.7735 (real root)",
+                                       "@title": "(10 e^(i π))/sqrt(3) ≈ -5.7735 (real root)",
+                                       "@width": "173",
+                                       "@height": "44",
+                                       "@type": "Default",
+                                       "@themes": "1,2,
+                                       3,
+                                       4,
+                                       5,
+                                       6,
+                                       7,
+                                       8,
+                                       9,
+                                       1
+   0,
+                                       1
+   1,
+                                       1
+   2"}, 
+   "plaintext": "(10 e^(i π))/sqrt(3) ≈ -5.7735 (real root)"
+                                    }
+                                 ],
+                                 "expressiontypes": {
+                                    "expressiontype": [
+                                       {
+                                          "@name": "Default"
+                                       },
+                                       {
+                                          "@name": "Default"
+                                       }
+                                    ]
+                                 },
+                                 "states": {
+                                    "@count": "2",
+                                    "state": {
+                                       "@name": "More digits",
+                                       "@input": "AllNthRoots__More digits"
+                                    },
+                                    "statelist": {
+                                       "@count": "3",
+                                       "@value": "Polar form",
+                                       "@delimiters": "",
+                                       "state": [
+                                          {
+                                             "@name": "Polar form",
+                                             "@input": "AllNthRoots__Polar form"
+                                          },
+                                          {
+                                             "@name": "Trigonometric form",
+                                             "@input": "AllNthRoots__Trigonometric form"
+                                          },
+                                          {
+                                             "@name": "Radical form",
+                                             "@input": "AllNthRoots__Radical form"
+                                          }
+                                       ]
+                                    }
+                                 }
+                              },
+                              {
+                                 "@title": "Plot of all roots in the complex plane",
+                                 "@scanner": "RootsOfUnity",
+                                 "@id": "PlotOfAllRootsInTheComplexPlane",
+                                 "@position": "800",
+                                 "@error": "false",
+                                 "@numsubpods": "1",
+                                 "subpod": {
+                                    "@title": "",
+                                    "img": {
+                                       "@src": "https://www4f.wolframalpha.com/Calculate/MSP/MSP158271fbi7hff9dafif03000036c50f6b81deie2a?MSPStoreType=image/gif&s=47",
+                                       "@alt": "",
+                                       "@title": "",
+                                       "@width": "220",
+                                       "@height": "215",
+                                       "@type": "2DMathPlot_1",
+                                       "@themes": "1,2,
+                                       3,
+                                       4,
+                                       5,
+                                       6,
+                                       7,
+                                       8,
+                                       9,
+                                       1
+   0,
+                                       1
+   1,
+                                       1
+   2"}, 
+   "plaintext": None
+                                    },
+                                    "expressiontypes": {
+                                       "expressiontype": {
+                                          "@name": "Default"
+                                       }
+                                    }
+                                 }
+                              ]
+                           }
+                        ]
