@@ -46,7 +46,8 @@ def listen(phrase, mp3_file):
         audio = r.listen(source)
         print('Processing')
         try:
-            run_command(r.recognize_wit(audio, key=keys.wit_api_key))
+            run_command(r.recognize_google(audio))
+            # run_command(r.recognize_wit(audio, key=keys.wit_api_key))
         except sr.UnknownValueError:
             print("Wit.ai could not understand audio")
         except sr.RequestError as e:

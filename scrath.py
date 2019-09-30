@@ -2,6 +2,11 @@ import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = './config/My Project-bd8af4dfa881.json'
 from google.cloud import texttospeech
 import base64
+import subprocess
+from pydub import AudioSegment
+from pydub.playback import play
+import io
+
 
 
 def create_google_sst(text):
@@ -19,9 +24,9 @@ def create_google_sst(text):
         )
     
     response = client.synthesize_speech(synthesis_input, voice, audio_config)
-    
-    with open('./static_audio_lib/how_can_help_you.mp3', 'wb') as out:
-        out.write(response.audio_content)
-        print('Audio content written to file')
+    audio = base64.b64decode(response.audio_content)
+
+    song = AudioSegment.from_file(io.BytesIO(audio), format="mp3")
+    play(song)
 
 create_google_sst("how can I help you ?")
